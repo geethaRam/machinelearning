@@ -56,12 +56,14 @@ Continue to define the vectors for each word in the sentence.
   ** Instead of carrying forward the two matrices, W<sub>aa</sub> and W<sub>ax</sub> - we can compress both of them together into a single matrix so that we have only one matrix to use in our computations. However the shape of this new matrix will be combination of the shapes of these two individual matrices 
   ![Reference](https://github.com/geethaRam/machinelearning/blob/master/simple_rnn.png "Logo Title Text 1")
   
+ 
  ## Backpropagation
  * In order to compute backpropagation (similar to what we saw in Logistic regression), we need to define a loss function
- ** Find the loss associated with predicting a single word
- ** Then aggregate the whole loss to the entire sequence
- ** Based on the loss, we update the parameters in each back prop step using gradient descent
- ** In the below example, the green arrows show forward propagation. The blue arrows show Loss function calculation and the red arrows show backward propagation
+ * Find the loss associated with predicting a single word
+ * Then aggregate the whole loss to the entire sequence
+ * Based on the loss, we update the parameters in each back prop step using gradient descent
+ * In the below example, the green arrows show forward propagation. The blue arrows show Loss function calculation and the red arrows show backward propagation
+ 
  ![Reference](https://github.com/geethaRam/machinelearning/blob/master/back_rnn.png "Logo Title Text 1")
  
  ## Different types of RNNs
@@ -81,7 +83,7 @@ Continue to define the vectors for each word in the sentence.
  * One-One architecture
  ** this is just a standard NN. Not a RNN
  
- ** Sequence generation
+ ## Sequence generation
  
  
  

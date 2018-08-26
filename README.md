@@ -58,11 +58,11 @@ Continue to define the vectors for each word in the sentence.
   
  
  ## Backpropagation
- * In order to compute backpropagation (similar to what we saw in Logistic regression), we need to define a loss function
- * Find the loss associated with predicting a single word
- * Then aggregate the whole loss to the entire sequence
- * Based on the loss, we update the parameters in each back prop step using gradient descent
- * In the below example, the green arrows show forward propagation. The blue arrows show Loss function calculation and the red arrows show backward propagation
+* In order to compute backpropagation (similar to what we saw in Logistic regression), we need to define a loss function
+* Find the loss associated with predicting a single word
+* Then aggregate the whole loss to the entire sequence
+* Based on the loss, we update the parameters in each back prop step using gradient descent
+* In the below example, the green arrows show forward propagation. The blue arrows show Loss function calculation and the red arrows show backward propagation
  
    ![Reference](https://github.com/geethaRam/machinelearning/blob/master/back_rnn.png "Logo Title Text 1")
  

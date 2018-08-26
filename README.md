@@ -13,7 +13,9 @@
 
 ## Notations
 Input: x : harry potter met hermione granger met at the hallway
+
 Goal : Identify name entities (Harry potter and Hermione granger)
+
 output y:  1      1      0     1        1     0   0   0  0
 
 Ouput is the binary representation if the given word is a named entity or not
@@ -52,7 +54,7 @@ Continue to define the vectors for each word in the sentence.
  * The activation function for the final layer will be sigmoid (if it is binary classification) or softmax( if it is prediction)
  * Simplified RNN Notation 
   ** Instead of carrying forward the two matrices, W<sub>aa</sub> and W<sub>ax</sub> - we can compress both of them together into a single matrix so that we have only one matrix to use in our computations. However the shape of this new matrix will be combination of the shapes of these two individual matrices 
-  ![Reference](https://github.com/geethaRam/machinelearning/simple_rnn.png "Logo Title Text 1")
+  ![Reference](https://github.com/geethaRam/machinelearning/blob/master/simple_rnn.png "Logo Title Text 1")
 
 
 

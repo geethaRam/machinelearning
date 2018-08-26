@@ -32,6 +32,19 @@
   Number of words in input : T<sub>x</sub><sup>(i)</sup>
   Number of words in ouput : T<sub>y</sub><sup>(i)</sup>
 
+ Superscript  [l][l]  denotes an object associated with the  lthlth  layer.
+
+ Example:  a[4]a[4]  is the  4th4th  layer activation.  W[5]W[5]  and  b[5]b[5]  are the  5th5th  layer parameters.
+ Superscript  (i)(i)  denotes an object associated with the  ithith  example.
+
+ Example:  x(i)x(i)  is the  ithith  training example input.
+ Superscript  ⟨t⟩⟨t⟩  denotes an object at the  tthtth  time-step.
+
+ Example:  x⟨t⟩x⟨t⟩  is the input x at the  tthtth  time-step.  x(i)⟨t⟩x(i)⟨t⟩  is the input at the  tthtth  timestep of         example  ii .
+ Lowerscript  ii  denotes the  ithith  entry of a vector.
+
+  Example:  a[l]iai[l]  denotes the  ithith  entry of the activations in layer  ll .
+
 ## Representing words in Vocabulary
 
 Define a vocabulary vector of 10,000(for eg) words. Commercial tools use 50,000 or 60,000 words in the vocabulary matrix.
@@ -92,6 +105,8 @@ Continue to define the vectors for each word in the sentence.
  * What to do when the word in the input is not in the corpus of text - you modify that word to <UNKN> unknown
  * Then apply the RNN model that takes input from the previous layer predictions for each word in the sequence
  * Use softmax as the activation function since we are determining the probability of a given word in the input matches in the training word vector.
+ * In Sequence generation - you have an encoder to process the input and decoder to produce the output
+ * Sample use cases: Machine translation, Question/Answering systems, Chatbots.
  
  ## Challenges in RNN
  * Lets see an example sequence: 

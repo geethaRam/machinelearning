@@ -119,7 +119,29 @@ Continue to define the vectors for each word in the sentence.
   
   * Full GRU   
      ![Reference](https://github.com/geethaRam/machinelearning/blob/master/gru1.png "Logo Title Text 1")
+  
+  ## LSTM - Long Short term memory
+  * Powerful than GRU
+  * But GRU is faster since there are only two gates and hence hte number of cmputations are less - which means it can scale       well to many number of layers.
+  * GRU vs LSTM equation
+     ![Reference](https://github.com/geethaRam/machinelearning/blob/master/lstm.png "Logo Title Text 1")
      
+ ## Bi-directional RNN
+  * getting information from future.
+  * So far - we have only seen RNN models that take information from previous words/layers. 
+  * In cases like below, we need to take into account the words from the future as well
+  *  Sequence1 : He said, "I like Teddy bears"
+     Sequence2: He said, "I like Teddy Roosevelt since he is the best president!"
+  * The first few words would not tell whether they are talking about `teddy bears` or `presidents`
+  * A Bi-directional stage is added to each stage as part of the forward prop itself.
+  * Any NLP problem usually needs Bi-directional RNN with LSTM blocks for Forward Prop
+  * Disadvantage: Need the entire sequence of data. So, cannot do any real -time speech recognition type problems.
+  * BRNN
+     ![Reference](https://github.com/geethaRam/machinelearning/blob/master/brnn.png "Logo Title Text 1")
+ 
+ ## Deep RNN
+ * The RNN cannot have many deep layers. Most of them would not have more than 3 deep layers since RNNs are already much           temporal in sense. 
+   ![Reference](https://github.com/geethaRam/machinelearning/blob/master/deep_rnn.png "Logo Title Text 1")
      
   
  

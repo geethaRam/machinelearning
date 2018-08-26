@@ -55,6 +55,36 @@ Continue to define the vectors for each word in the sentence.
  * Simplified RNN Notation 
   ** Instead of carrying forward the two matrices, W<sub>aa</sub> and W<sub>ax</sub> - we can compress both of them together into a single matrix so that we have only one matrix to use in our computations. However the shape of this new matrix will be combination of the shapes of these two individual matrices 
   ![Reference](https://github.com/geethaRam/machinelearning/blob/master/simple_rnn.png "Logo Title Text 1")
+  
+ ## Backpropagation
+ * In order to compute backpropagation (similar to what we saw in Logistic regression), we need to define a loss function
+ ** Find the loss associated with predicting a single word
+ ** Then aggregate the whole loss to the entire sequence
+ ** Based on the loss, we update the parameters in each back prop step using gradient descent
+ ** In the below example, the green arrows show forward propagation. The blue arrows show Loss function calculation and the red arrows show backward propagation
+ ![Reference](https://github.com/geethaRam/machinelearning/blob/master/back_rnn.png "Logo Title Text 1")
+ 
+ ## Different types of RNNs
+ * In the previous examples we saw, the input and ouptut size are equal. But it is not possible to always have the same input and ouput length for all problems in NLP
+ * Many to Many architecture: (if input and output length are the same)
+ ** Many inputs and many outputs 
+ ** As we saw in previous examples
+ * many to one architecture
+ ** In the case of a sentiment classification problem, there will be many input word vectors, however the final output has to be 0/1 or 1...5 - one of the sentiments. 
+ ** In this case, we dont have to compute the output y - in each input layer of the RNN - rather the final layer can calculate the sentiment of the entire sequence of the word vectors. hence this has many inputs and one output 
+ * One-Many architecture
+ ** In the case of music generation, the input is usually a music type or no input at all but the output is many 
+ * Many to Many architecture:(if input and output length are different)
+ ** Eg: machine translation. 
+ ** In this case, the input will be in a different language which will have a different set of words.
+ ** The input will then go through the encoder for processing and then into decoder that produces the output
+ * One-One architecture
+ ** this is just a standard NN. Not a RNN
+ 
+ ** Sequence generation
+ 
+ 
+ 
 
 
 

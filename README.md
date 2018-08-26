@@ -86,6 +86,44 @@ Continue to define the vectors for each word in the sentence.
    *  this is just a standard NN. Not a RNN
  
  ## Sequence generation
+ * Get a training set : large corpus of english text
+ * Tokenize each sentences into vectors in the training set. 
+ * While tokenizing, we add <EOS> end-of-sentence to determine the sentence-end
+ * What to do when the word in the input is not in the corpus of text - you modify that word to <UNKN> unknown
+ * Then apply the RNN model that takes input from the previous layer predictions for each word in the sequence
+ * Use softmax as the activation function since we are determining the probability of a given word in the input matches in the training word vector.
+ 
+ ## Challenges in RNN
+ * Lets see an example sequence: 
+   * Sequence 1: The cat, which ate those foods at the event and at the party, was full.
+   * Sequence 2: The cats, which ate ........................................, were full.
+   * Notice in the first sequence, we need to determine that `was` is associated with `cat` and `were` is associated with          `cats`.
+   * Now the output of `was` or `were` is from a NN layer that is much farther from the `cat` or `cats` NN layer. So, it is        very difficult for the gradient descent of `was` NN layer to have a meaningful impact on the `cat` layer. 
+   * This is a common RNN problem in NLP when we create word-level Layers where it is possible that there may be LARGE number      of NN layer(upto 100 layers or more than that) when modeling an english sentence. 
+   * This is called **vanishing gradients** where gradients decrease exponentially. 
+   * There is also another problem called **Exploding gradients**
+   * With larger NN - then gradients can increase exponentially. Because of this, the RNN model can set parameters to NaN (numerical overflow).
+   * Solution: Gradient clipping - relatively robust solution
+   * Vanishing gradient is difficult to solve compared to Exploding gradient.
+   
+  ## Gated Recurrent Units (GRU)
+  * The equation for forward propagation of RNN
+                
+       a<sup>t</sup>=g(W<sub>a</sub>[a<sup>t-1</sup>,x<sup>t</sup>],b<sub>a</sub>)
+  *  Identify a memory cell : c<sup>t</sup>=a<sup>t</sup>
+  * Define gate: Gamma of u as a sigmoid function (close to 0 to 1). Think of this as a gated fence.
+  * Gate will decide whether to update the memory cell or not between the layers
+  * The c vector, C~ vector and the gamma vector will all have the same dimensions
+  * Simplified GRU
+     ![Reference](https://github.com/geethaRam/machinelearning/blob/master/gru.png "Logo Title Text 1")
+  
+  * Full GRU   
+     ![Reference](https://github.com/geethaRam/machinelearning/blob/master/gru1.png "Logo Title Text 1")
+     
+     
+  
+ 
+ 
  
  
  
